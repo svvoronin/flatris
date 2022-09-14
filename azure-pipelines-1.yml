@@ -15,10 +15,13 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- task: UseNode@1
+
+- task: Npm@1
   inputs:
-    version: '6.14.4'
+     command: 'install'
+     verbose: true
+  displayName: 'Install npm package'
 - script: |
-    npm install
+    
     npm run build
   displayName: 'npm install and build'
